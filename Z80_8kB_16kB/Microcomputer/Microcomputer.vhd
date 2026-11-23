@@ -75,7 +75,7 @@ clock => clk,
 q => basRomData
 );
 
-ram1: entity work.InternalRam4K
+ram1: entity work.InternalRam16K
 port map
 (
 address => cpuAddress(13 downto 0),
@@ -118,12 +118,8 @@ n_memRD <= n_RD or n_MREQ;
 n_basRomCS <= '0' when cpuAddress(15 downto 13) = "000" else '1'; --8K at bottom of memory
 n_interface1CS <= '0' when cpuAddress(7 downto 1) = "1000000" and (n_ioWR='0' or n_ioRD = '0') else '1'; -- 2 Bytes $80-$81
 n_aaronCS <= '0' when cpuAddress(7 downto 1) = "1001000" and (n_ioWR='0' or n_ioRD = '0') else '1'; -- 2 Bytes $90-$91
---n_internalRam1CS <= '0' when cpuAddress(15 downto 14) = "00" else '1';
---n_internalRam1CS <= '0' when cpuAddress(15 downto 13) = "001" or cpuAddress(15 downto 13) = "010" or cpuAddress(15 downto 13) = "011" or cpuAddress(15 downto 13) = "100" else '1';
-n_internalRam1CS <= '0' when cpuAddress(15 downto 13) = "001" or cpuAddress(15 downto 13) = "010" else '1';
+n_internalRam1CS <= '0' when cpuAddress(15 downto 13) = "001" or cpuAddress(15 downto 13) = "010" else '1'; --16kB RAM
 
---
---
 cpuDataIn <=
 interface1DataOut when n_interface1CS = '0' else
 basRomData when n_basRomCS = '0' else
