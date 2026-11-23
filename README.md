@@ -9,7 +9,7 @@ The **RAM** increased to **16kB**.
 ### DEVICE
 
 FAMILY "Cyclone IV E"  
-DEVICE EP4CE6E22C8  
+DEVICE **EP4CE6E22C8**  
 TOP_LEVEL_ENTITY Microcomputer  
 LAST_QUARTUS_VERSION "18.1.0 Lite Edition"  
 
@@ -28,3 +28,21 @@ LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
  PIN_10 -to txd1
  PIN_88 -to n_reset
  ```
+
+### RESOURCE
+
+```
+Quartus Prime Version	18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name	Microcomputer
+Top-level Entity Name	Microcomputer
+Family	Cyclone IV E
+Device	**EP4CE6E22C8**
+Timing Models	Final
+Total logic elements	**2,219** / 6,272 ( 35 % )
+Total registers	457
+Total pins	12 / 92 ( 13 % )
+Total virtual pins	0
+Total memory bits	**196,736** / 276,480 ( 71 % )
+Embedded Multiplier 9-bit elements	0 / 30 ( 0 % )
+Total PLLs	0 / 2 ( 0 % )
+```
